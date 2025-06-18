@@ -26,6 +26,13 @@ function Users({ setPage, setCurrentPatient, people }) {
 
   const totalUsersPages = Math.ceil(filteredPeople.length / ITEMS_PER_PAGE);
 
+  const roleColors = {
+    test: "bg-blue-100 text-blue-800",
+    novice: "bg-green-100 text-green-800",
+    admin: "bg-purple-100 text-purple-800",
+    banned: "bg-red-100 text-red-800",
+  };
+
   return (
     <div className="min-h-screen bg-slate-100 p-8 flex-1">
       {/* Header */}
@@ -98,19 +105,23 @@ function Users({ setPage, setCurrentPatient, people }) {
                       <td>{person.country}</td>
                       <td>
                         <select
-                            className="px-2 border-r-[16px] border-r-transparent py-1 rounded bg-yellow-100 font-medium text-yellow-800 text-xs capitalize focus:outline-none hover:cursor-pointer"
-                            defaultValue="suspected"
-                            onChange={(e) => {
-                            // Optionally handle role update logic here
-                            console.log("Role changed to:", e.target.value);
-                            }}
+                          className={`px-2 border-r-[16px] border-r-transparent py-1 rounded font-medium text-xs capitalize focus:outline-none hover:cursor-pointer ${
+                            roleColors[person.role] || "bg-gray-100 text-gray-800"
+                          }`}
+                          // value={person.role}
+                          onChange={(e) => {
+                            const newRole = e.target.value;
+                            console.log("Role changed to:", newRole);
+                            // Update logic here (e.g. updatePersonRole(person.id, newRole));
+                            
+                          }}
                         >
-                            <option value="silly">Silly</option>
-                            <option value="novice">Novice</option>
-                            <option value="admin">Admin</option>
-                            <option value="banned">Banned</option>
+                          <option value="test">Test</option>
+                          <option value="novice">Novice</option>
+                          <option value="admin">Admin</option>
+                          <option value="banned">Banned</option>
                         </select>
-                        </td>
+                      </td>
                     </tr>
                   ))
                 ) : (

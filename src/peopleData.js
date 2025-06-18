@@ -4,24 +4,27 @@ const peopleData = [
     name: "Alice Johnson",
     email: "alice.johnson@example.com",
     phone: "555-123-4567",
-    candidate: "confirmed",
+    candidate: "ready",
     country: "USA",
+    role: "admin",
   },
   {
     id: 2,
     name: "Brian Smith",
     email: "brian.smith@example.com",
     phone: "555-234-5678",
-    candidate: "confirmed",
+    candidate: "ready",
     country: "Canada",
+    role: "test",
   },
   {
     id: 3,
     name: "Carla Martinez",
     email: "carla.m@example.com",
     phone: "555-345-6789",
-    candidate: "false",
+    candidate: "ready",
     country: "Mexico",
+    role: "banned",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const peopleData = [
     phone: "555-456-7890",
     candidate: "confirmed",
     country: "Vietnam",
+    role: "novice",
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const peopleData = [
     phone: "555-567-8901",
     candidate: "false",
     country: "UK",
+    role: "banned",
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const peopleData = [
     phone: "555-678-9012",
     candidate: "false",
     country: "Australia",
+    role: "test",
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ const peopleData = [
     phone: "555-789-0123",
     candidate: "confirmed",
     country: "South Korea",
+    role: "admin",
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ const peopleData = [
     phone: "555-890-1234",
     candidate: "false",
     country: "South Korea",
+    role: "novice",
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ const peopleData = [
     phone: "555-901-2345",
     candidate: "false",
     country: "Spain",
+    role: "banned",
   },
   {
     id: 10,
@@ -78,6 +87,7 @@ const peopleData = [
     phone: "555-012-3456",
     candidate: "confirmed",
     country: "India",
+    role: "test",
   },
   {
     id: 11,
@@ -86,6 +96,7 @@ const peopleData = [
     phone: "555-112-2334",
     candidate: "confirmed",
     country: "USA",
+    role: "admin",
   },
   {
     id: 12,
@@ -94,6 +105,7 @@ const peopleData = [
     phone: "555-223-3445",
     candidate: "Special Patient",
     country: "UK",
+    role: "novice",
   },
   {
     id: 13,
@@ -102,6 +114,7 @@ const peopleData = [
     phone: "555-334-4556",
     candidate: "false",
     country: "Australia",
+    role: "banned",
   },
   {
     id: 14,
@@ -110,6 +123,7 @@ const peopleData = [
     phone: "555-445-5667",
     candidate: "confirmed",
     country: "Canada",
+    role: "admin",
   },
   {
     id: 15,
@@ -118,6 +132,7 @@ const peopleData = [
     phone: "555-556-6778",
     candidate: "Special Patient",
     country: "Mexico",
+    role: "test",
   },
   {
     id: 16,
@@ -126,6 +141,7 @@ const peopleData = [
     phone: "555-667-7889",
     candidate: "false",
     country: "USA",
+    role: "banned",
   },
   {
     id: 17,
@@ -134,6 +150,7 @@ const peopleData = [
     phone: "555-778-8990",
     candidate: "confirmed",
     country: "Ireland",
+    role: "novice",
   },
   {
     id: 18,
@@ -142,6 +159,7 @@ const peopleData = [
     phone: "555-889-9001",
     candidate: "Special Patient",
     country: "UK",
+    role: "admin",
   },
   {
     id: 19,
@@ -150,6 +168,7 @@ const peopleData = [
     phone: "555-990-0112",
     candidate: "false",
     country: "USA",
+    role: "banned",
   },
   {
     id: 20,
@@ -158,8 +177,8 @@ const peopleData = [
     phone: "555-101-1213",
     candidate: "confirmed",
     country: "Australia",
+    role: "test",
   },
-  // More people with countries added:
   {
     id: 21,
     name: "Uma Patel",
@@ -167,6 +186,7 @@ const peopleData = [
     phone: "555-121-3141",
     candidate: "Special Patient",
     country: "India",
+    role: "novice",
   },
   {
     id: 22,
@@ -175,6 +195,7 @@ const peopleData = [
     phone: "555-131-4151",
     candidate: "confirmed",
     country: "Hong Kong",
+    role: "admin",
   },
   {
     id: 23,
@@ -183,6 +204,7 @@ const peopleData = [
     phone: "555-141-5161",
     candidate: "false",
     country: "USA",
+    role: "banned",
   },
   {
     id: 24,
@@ -191,6 +213,7 @@ const peopleData = [
     phone: "555-151-6171",
     candidate: "confirmed",
     country: "Spain",
+    role: "test",
   },
   {
     id: 25,
@@ -199,6 +222,7 @@ const peopleData = [
     phone: "555-161-7181",
     candidate: "suspected",
     country: "Egypt",
+    role: "novice",
   },
   {
     id: 26,
@@ -207,6 +231,7 @@ const peopleData = [
     phone: "555-171-8191",
     candidate: "false",
     country: "New Zealand",
+    role: "banned",
   },
   {
     id: 27,
@@ -215,6 +240,7 @@ const peopleData = [
     phone: "555-181-9202",
     candidate: "confirmed",
     country: "UK",
+    role: "admin",
   },
   {
     id: 28,
@@ -223,6 +249,7 @@ const peopleData = [
     phone: "555-192-0212",
     candidate: "suspected",
     country: "USA",
+    role: "novice",
   },
   {
     id: 29,
@@ -231,6 +258,7 @@ const peopleData = [
     phone: "555-202-1222",
     candidate: "false",
     country: "Argentina",
+    role: "banned",
   },
   {
     id: 30,
@@ -239,6 +267,7 @@ const peopleData = [
     phone: "555-212-2232",
     candidate: "confirmed",
     country: "Canada",
+    role: "test",
   },
   {
     id: 31,
@@ -247,6 +276,7 @@ const peopleData = [
     phone: "555-222-3242",
     candidate: "suspected",
     country: "Sweden",
+    role: "novice",
   },
   {
     id: 32,
@@ -255,6 +285,7 @@ const peopleData = [
     phone: "555-232-4252",
     candidate: "false",
     country: "Chile",
+    role: "banned",
   },
   {
     id: 33,
@@ -263,6 +294,7 @@ const peopleData = [
     phone: "555-242-5262",
     candidate: "confirmed",
     country: "Puerto Rico",
+    role: "admin",
   },
   {
     id: 34,
@@ -271,6 +303,7 @@ const peopleData = [
     phone: "555-252-6272",
     candidate: "suspected",
     country: "UAE",
+    role: "test",
   },
   {
     id: 35,
@@ -279,6 +312,7 @@ const peopleData = [
     phone: "555-262-7282",
     candidate: "false",
     country: "China",
+    role: "banned",
   },
   {
     id: 36,
@@ -287,6 +321,7 @@ const peopleData = [
     phone: "555-272-8292",
     candidate: "confirmed",
     country: "USA",
+    role: "novice",
   },
   {
     id: 37,
@@ -295,6 +330,7 @@ const peopleData = [
     phone: "555-282-9303",
     candidate: "suspected",
     country: "New Zealand",
+    role: "admin",
   },
   {
     id: 38,
@@ -303,6 +339,7 @@ const peopleData = [
     phone: "555-292-0313",
     candidate: "false",
     country: "France",
+    role: "banned",
   },
   {
     id: 39,
@@ -311,6 +348,7 @@ const peopleData = [
     phone: "555-303-1323",
     candidate: "confirmed",
     country: "South Korea",
+    role: "test",
   },
   {
     id: 40,
@@ -319,6 +357,7 @@ const peopleData = [
     phone: "555-313-2333",
     candidate: "suspected",
     country: "USA",
+    role: "novice",
   },
 ];
 

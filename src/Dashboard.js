@@ -16,11 +16,16 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
   const [reviewedCollapsed, setReviewedCollapsed] = useState(false);
   const [completedCollapsed, setCompletedCollapsed] = useState(false);
 
-  const suspectedPeople = peopleData.filter(
+  const suspectedPeople = peopleData
+  .filter(
     person =>
-      person.candidate === "suspected" &&
+      (person.candidate === "suspected" || person.candidate === "ready") &&
       person.name.toLowerCase().includes(search.toLowerCase())
-  );
+  )
+  .sort((a, b) => {
+    if (a.candidate === b.candidate) return 0;
+    return a.candidate === "suspected" ? -1 : 1;
+  });
 
   const checkedPeople = peopleData.filter(
     person =>
@@ -80,7 +85,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
           <h1 className="text-xl font-bold text-left">TODO List 📝</h1>
           <div className="flex items-center gap-2">
             <button className="p-2 bg-slate-900 text-white rounded-lg hover:bg-slate-700 text-sm px-4 mr-3">
-                AI Scan All
+                Scan All With AI
             </button>
             <div className="text-sm text-red-700 font-medium">Immediate Action Required</div>
             <button
@@ -120,8 +125,18 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
                       <td>{person.email}</td>
                       <td>{person.country}</td>
                       <td>
-                        <span className="px-3 py-1 rounded bg-yellow-100 text-yellow-800 text-xs capitalize">
-                          Suspected
+                        <span
+                          className={`px-3 py-1 rounded text-xs font-medium capitalize ${
+                            person.candidate === "suspected"
+                              ? "bg-yellow-100 text-yellow-700"
+                              : person.candidate === "ready"
+                              ? "bg-gray-200 text-gray-500"
+                              : "bg-blue-100 text-blue-700"
+                          }`}
+                        >
+                          {person.candidate === "suspected"
+                            ? "Suspected  Case"
+                            : "Ready to AI Scan"}
                         </span>
                       </td>
                     </tr>
