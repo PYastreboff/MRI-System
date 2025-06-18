@@ -82,7 +82,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
       {/* TODO List */}
       <div className="bg-white p-6 pb-3 rounded-2xl shadow mb-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-xl font-bold text-left">TODO List 📝</h1>
+          <h1 className="text-xl font-bold text-left">TODO List 📝  <span className="text-sm font-light text-gray-400 ml-3">Total Number: {suspectedPeople.length}</span></h1>
           <div className="flex items-center gap-2">
             <button className="p-2 bg-slate-900 text-white rounded-lg hover:bg-slate-700 text-sm px-4 mr-3">
                 Scan All With AI
@@ -179,7 +179,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
       {/* Reviewed */}
       <div className="bg-white p-6 pb-3 rounded-2xl shadow mb-6">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-bold text-left">Reviewed 📋</h1>
+          <h1 className="text-xl font-bold text-left">Reviewed 📋 <span className="text-sm font-light text-gray-400 ml-3">Total Number: {checkedPeople.length}</span></h1>
           <div className="flex items-center gap-2">
             <div className="text-sm text-green-700 font-medium">Reviewed Patients</div>
             <button
@@ -274,7 +274,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
       {/* Completed By Me */}
       <div className="bg-white p-6 pb-3 rounded-2xl shadow mb-6">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-bold text-left">Completed By Me ✅</h1>
+          <h1 className="text-xl font-bold text-left">Completed By Me ✅ <span className="text-sm font-light text-gray-400 ml-3">Total Number: {checkedPeople.length}</span></h1>
           <div className="flex items-center gap-2">
             <div className="text-sm text-green-700 font-medium">Reviewed Patients</div>
             <button
