@@ -56,7 +56,7 @@ function MriView({ setPage, currentPatient }) {
         <ul>{/* Optional: future list items */}</ul>
 
         <div className="flex items-center justify-center w-full h-full py-20 my-20 text-gray-400 text-center">
-          Placeholder for Scan Editor
+          Placeholder for Scan Editor - most likely using this&nbsp;<a className="text-blue-500 hover:underline" target="_blank" href="https://github.com/SOCR/SOCR_BrainViewer/tree/main?fbclid=IwZXh0bgNhZW0CMTEAAR670b2QmX18NWK3P9oScLu_z9YpKRKUlFsO3FFnQb-dpbi5w8CwPLjfKhZyfw_aem_zQDLCTH7NqLc7FqEd6eQFg"> Brain Viewer</a>.
         </div>
       </div>
     </div>
