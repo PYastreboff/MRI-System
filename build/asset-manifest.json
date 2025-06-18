@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/MRI-System/static/css/main.adf37f46.css",
-    "main.js": "/MRI-System/static/js/main.190103aa.js",
-    "static/js/453.479ad846.chunk.js": "/MRI-System/static/js/453.479ad846.chunk.js",
+    "main.js": "/MRI-System/static/js/main.fcd43998.js",
+    "static/js/453.e64d3360.chunk.js": "/MRI-System/static/js/453.e64d3360.chunk.js",
     "static/media/loginImg.jpg": "/MRI-System/static/media/loginImg.e411b70833d407536d88.jpg",
     "static/media/food-icon.png": "/MRI-System/static/media/food-icon.a127ae684d92a606509e.png",
     "index.html": "/MRI-System/index.html",
     "main.adf37f46.css.map": "/MRI-System/static/css/main.adf37f46.css.map",
-    "main.190103aa.js.map": "/MRI-System/static/js/main.190103aa.js.map",
-    "453.479ad846.chunk.js.map": "/MRI-System/static/js/453.479ad846.chunk.js.map"
+    "main.fcd43998.js.map": "/MRI-System/static/js/main.fcd43998.js.map",
+    "453.e64d3360.chunk.js.map": "/MRI-System/static/js/453.e64d3360.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.adf37f46.css",
-    "static/js/main.190103aa.js"
+    "static/js/main.fcd43998.js"
   ]
 }
