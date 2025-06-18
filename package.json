@@ -1,6 +1,7 @@
 {
-  "name": "test",
+  "name": "mri-system",
   "version": "0.1.0",
+  "homepage": "https://PYastreboff.github.io/MRI-System",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
@@ -15,6 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
