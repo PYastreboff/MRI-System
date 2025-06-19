@@ -47,14 +47,14 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
   const totalCheckedPages = Math.ceil(checkedPeople.length / ITEMS_PER_PAGE);
 
   return (
-    <div className="min-h-screen bg-slate-100 p-8 flex-1">
+    <div className="min-h-screen bg-slate-950 p-8 flex-1">
       <div className="flex items-center justify-between mb-6 w-full">
-        <h1 className="text-3xl text-left">Hello Admin User 👋🏼,</h1>
+        <h1 className="text-3xl text-left text-white">Hello Admin User 👋🏼,</h1>
         <div className="relative w-64">
           <input
             type="text"
             placeholder="Search people..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-white text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md"
             value={search}
             onChange={e => {
               setSearch(e.target.value);
@@ -63,7 +63,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
             }}
           />
           <svg
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-black"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -80,17 +80,17 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
       </div>
 
       {/* TODO List */}
-      <div className="bg-white p-6 pb-3 rounded-2xl shadow mb-6">
+      <div className="bg-slate-800 p-6 pb-3 rounded-2xl shadow mb-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-xl font-bold text-left">TODO List 📝  <span className="text-sm font-light text-gray-400 ml-3">Total Number: {suspectedPeople.length}</span></h1>
+          <h1 className="text-xl text-white font-bold text-left">TODO List 📝  <span className="text-sm font-light text-gray-200 ml-3">Total Number: {suspectedPeople.length}</span></h1>
           <div className="flex items-center gap-2">
-            <button className="p-2 bg-slate-900 text-white rounded-lg hover:bg-slate-700 text-sm px-4 mr-3">
+            <button className="p-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-400 text-sm px-4 mr-3">
                 Scan All With AI
             </button>
-            <div className="text-sm text-red-700 font-medium">Immediate Action Required</div>
+            <div className="text-sm text-red-500 font-medium">Immediate Action Required</div>
             <button
               onClick={() => setTodoCollapsed(prev => !prev)}
-              className="text-2xl text-gray-500 hover:text-gray-800 ml-3"
+              className="text-2xl text-white hover:text-gray-300 ml-3"
             >
               {todoCollapsed ? <FontAwesomeIcon icon={faChevronDown} /> : <FontAwesomeIcon icon={faChevronUp} />}
             </button>
@@ -114,7 +114,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
                   paginatedSuspected.map(person => (
                     <tr
                       key={person.id}
-                      className="border-b hover:bg-gray-50 cursor-pointer"
+                      className="border-b hover:bg-gray-700 text-white cursor-pointer"
                       onClick={() => {
                         setPage("mri");
                         setCurrentPatient(person);
@@ -177,14 +177,14 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
       </div>
 
       {/* Reviewed */}
-      <div className="bg-white p-6 pb-3 rounded-2xl shadow mb-6">
+      <div className="bg-slate-800 p-6 pb-3 rounded-2xl shadow mb-6">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-bold text-left">Reviewed 📋 <span className="text-sm font-light text-gray-400 ml-3">Total Number: {checkedPeople.length}</span></h1>
+          <h1 className="text-xl text-white font-bold text-left">Reviewed 📋 <span className="text-sm font-light text-gray-200 ml-3">Total Number: {checkedPeople.length}</span></h1>
           <div className="flex items-center gap-2">
-            <div className="text-sm text-green-700 font-medium">Reviewed Patients</div>
+            <div className="text-sm text-green-400 font-medium">Reviewed Patients</div>
             <button
               onClick={() => setReviewedCollapsed(prev => !prev)}
-              className="text-2xl text-gray-500 hover:text-gray-800  ml-3"
+              className="text-2xl text-white hover:text-gray-200  ml-3"
             >
               {reviewedCollapsed ? <FontAwesomeIcon icon={faChevronDown} /> : <FontAwesomeIcon icon={faChevronUp} />}
             </button>
@@ -208,7 +208,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
                   paginatedChecked.map(person => (
                     <tr
                       key={person.id}
-                      className="border-b hover:bg-gray-50 cursor-pointer"
+                      className="border-b hover:bg-gray-700 text-white cursor-pointer"
                       onClick={() => {
                         setPage("mri");
                         setCurrentPatient(person);
@@ -272,14 +272,14 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
       </div>
 
       {/* Completed By Me */}
-      <div className="bg-white p-6 pb-3 rounded-2xl shadow mb-6">
+      <div className="bg-slate-800 p-6 pb-3 rounded-2xl shadow mb-6">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-xl font-bold text-left">Completed By Me ✅ <span className="text-sm font-light text-gray-400 ml-3">Total Number: {checkedPeople.length}</span></h1>
+          <h1 className="text-xl text-white font-bold text-left">Completed By Me ✅ <span className="text-sm font-light text-gray-200 ml-3">Total Number: {checkedPeople.length}</span></h1>
           <div className="flex items-center gap-2">
-            <div className="text-sm text-green-700 font-medium">Reviewed Patients</div>
+            <div className="text-sm text-green-400 font-medium">Reviewed Patients</div>
             <button
               onClick={() => setCompletedCollapsed(prev => !prev)}
-              className="text-2xl text-gray-500 hover:text-gray-800  ml-3"
+              className="text-2xl text-white hover:text-gray-200  ml-3"
             >
               {completedCollapsed ? <FontAwesomeIcon icon={faChevronDown} /> : <FontAwesomeIcon icon={faChevronUp} />}
             </button>
@@ -303,7 +303,7 @@ function Dashboard({ peopleData, setPage, setCurrentPatient }) {
                   paginatedChecked.map(person => (
                     <tr
                       key={person.id}
-                      className="border-b hover:bg-gray-50 cursor-pointer"
+                      className="border-b hover:bg-gray-700 text-white cursor-pointer"
                       onClick={() => {
                         setPage("mri");
                         setCurrentPatient(person);

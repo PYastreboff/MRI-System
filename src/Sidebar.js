@@ -27,22 +27,22 @@ function Sidebar({ setLoggedIn, setPage, page }) {
   ];
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row bg-slate-800">
         <div className={`${collapsed ? 'ml-20' : 'ml-64'} transition-all duration-300`}>
         <div
             className={`${
                 collapsed ? 'w-[80px]' : 'w-[250px]'
-            } fixed top-0 left-0 h-screen flex flex-col justify-between bg-white py-6 px-4 transition-all duration-300 overflow-hidden`}
+            } fixed top-0 left-0 h-screen flex flex-col justify-between bg-slate-800 py-6 px-4 transition-all duration-300 overflow-hidden`}
         >
             
         {/* Top: Logo and Toggle */}
         <div>
             <div className="flex items-center justify-between mb-10">
             <div className="flex items-center gap-2">
-                <img src={foodImg} alt="Logo" className="w-6 h-6" />
-                {!collapsed && <span className="text-xl font-bold text-slate-900">McSmart DB</span>}
+                <img src={foodImg} alt="Logo" className="w-6 h-6 fill-white" />
+                {!collapsed && <span className="text-xl font-bold text-white">McSmart DB</span>}
             </div>
-            <button onClick={toggleSidebar} className="text-slate-500 hover:text-slate-800">
+            <button onClick={toggleSidebar} className="text-white hover:text-slate-300">
                 <FontAwesomeIcon icon={faBars} />
             </button>
             </div>
@@ -59,8 +59,8 @@ function Sidebar({ setLoggedIn, setPage, page }) {
                 }}
                 className={`flex items-center gap-2 py-2 px-3 rounded-xl transition-colors
                     ${page === item.page 
-                        ? 'bg-slate-900 text-white hover:bg-slate-700' 
-                        : 'text-slate-600 hover:text-slate-800 hover:bg-slate-100'}
+                        ? 'bg-cyan-500 text-white hover:bg-cyan-400' 
+                        : 'text-white hover:text-slate-300 hover:bg-slate-800'}
                     `}
                 >
                 <FontAwesomeIcon icon={item.icon} className="w-5 h-5" />
@@ -74,7 +74,7 @@ function Sidebar({ setLoggedIn, setPage, page }) {
                 e.preventDefault();
                 setLoggedIn(false);
                 }}
-                className="flex items-center gap-2 py-2 px-3 text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded-xl"
+                className="flex items-center gap-2 py-2 px-3 text-white hover:text-slate-300 hover:bg-slate-800 rounded-xl"
             >
                 <FontAwesomeIcon icon={faKey} className="w-5 h-5" />
                 {!collapsed && <span>Logout</span>}
@@ -88,8 +88,8 @@ function Sidebar({ setLoggedIn, setPage, page }) {
                     {!collapsed && (
                     <>
                         <div className="flex flex-col">
-                        <span className="font-semibold text-sm">Admin</span>
-                        <span className="text-xs text-gray-500">Senior Doctor/Admin</span>
+                        <span className="font-semibold text-sm text-white">Admin</span>
+                        <span className="text-xs text-gray-300">Senior Doctor/Admin</span>
                         </div>
                         <FontAwesomeIcon icon={faChevronDown} className="w-4 h-4 ml-auto text-slate-500" />
                     </>
