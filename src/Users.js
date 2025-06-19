@@ -27,22 +27,22 @@ function Users({ setPage, setCurrentPatient, people }) {
   const totalUsersPages = Math.ceil(filteredPeople.length / ITEMS_PER_PAGE);
 
   const roleColors = {
-    test: "bg-blue-100 text-blue-800",
-    novice: "bg-green-100 text-green-800",
-    admin: "bg-purple-100 text-purple-800",
-    banned: "bg-red-100 text-red-800",
+    test: "bg-blue-100 text-blue-700",
+    novice: "bg-green-100 text-green-700",
+    admin: "bg-purple-100 text-purple-700",
+    banned: "bg-red-100 text-red-700",
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 p-8 flex-1">
+    <div className="min-h-screen bg-slate-950 p-8 flex-1">
       {/* Header */}
       <div className="flex items-center justify-between mb-6 w-full">
-        <h1 className="text-3xl text-left">Hello Admin User 👋🏼,</h1>
+        <h1 className="text-3xl text-left text-white">Hello Admin User 👋🏼,</h1>
         <div className="relative w-64">
           <input
             type="text"
             placeholder="Search people..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-white text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md"
             value={search}
             onChange={e => {
               setSearch(e.target.value);
@@ -50,7 +50,7 @@ function Users({ setPage, setCurrentPatient, people }) {
             }}
           />
           <svg
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-black"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -67,17 +67,20 @@ function Users({ setPage, setCurrentPatient, people }) {
       </div>
 
       {/* User Table */}
-      <div className="bg-white p-6 pb-3 rounded-2xl shadow mb-6">
+      <div className="bg-slate-800 p-6 pb-3 rounded-2xl shadow mb-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-xl font-bold text-left">
-            Manage Roles Here, You have all the POWER! ✊
+          <h1 className="text-xl text-white font-bold text-left">
+            Manage Roles Here, You have all the POWER! ✊ <span className="text-sm font-light text-gray-200 ml-3">Total Number: {filteredPeople.length}</span>
           </h1>
-          <button
-            onClick={() => setCollapsed(prev => !prev)}
-            className="text-2xl text-gray-500 hover:text-gray-800 ml-3"
-          >
-            <FontAwesomeIcon icon={collapsed ? faChevronDown : faChevronUp} />
-          </button>
+          <div className="flex items-center gap-2">
+            <div className="text-sm text-green-400 font-medium">User Management</div>
+            <button
+              onClick={() => setCollapsed(prev => !prev)}
+              className="text-2xl text-white hover:text-gray-300 ml-3"
+            >
+              <FontAwesomeIcon icon={collapsed ? faChevronDown : faChevronUp} />
+            </button>
+          </div>
         </div>
 
         {!collapsed && (
@@ -97,7 +100,11 @@ function Users({ setPage, setCurrentPatient, people }) {
                   paginated.map(person => (
                     <tr
                       key={person.id}
-                      className="border-b hover:bg-gray-50 cursor-pointer"
+                      className="border-b hover:bg-gray-700 text-white cursor-pointer"
+                      onClick={() => {
+                        setPage("mri");
+                        setCurrentPatient(person);
+                      }}
                     >
                       <td className="py-3">{person.name}</td>
                       <td>{person.phone}</td>
@@ -108,12 +115,11 @@ function Users({ setPage, setCurrentPatient, people }) {
                           className={`px-2 border-r-[16px] border-r-transparent py-1 rounded font-medium text-xs capitalize focus:outline-none hover:cursor-pointer ${
                             roleColors[person.role] || "bg-gray-100 text-gray-800"
                           }`}
-                          // value={person.role}
+                          defaultValue={person.role}
                           onChange={(e) => {
                             const newRole = e.target.value;
                             console.log("Role changed to:", newRole);
                             // Update logic here (e.g. updatePersonRole(person.id, newRole));
-                            
                           }}
                         >
                           <option value="test">Test</option>
@@ -126,7 +132,7 @@ function Users({ setPage, setCurrentPatient, people }) {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="6" className="text-gray-500 py-4 text-center">
+                    <td colSpan="5" className="text-gray-500 py-4 text-center">
                       No users found with this search criteria.
                     </td>
                   </tr>

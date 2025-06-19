@@ -23,38 +23,38 @@ function Help({ setPage }) {
   ];
 
   return (
-    <div className="min-h-screen bg-blue-50 p-8 flex-1">
+    <div className="min-h-screen bg-slate-950 p-8 flex-1">
       {/* Title with Back Icon */}
       <div className="flex items-center mb-6">
         <button
           onClick={() => setPage("dashboard")}
-          className="mr-3 text-gray-600 hover:text-gray-800 transition"
+          className="mr-3 text-gray-300 hover:text-white transition"
         >
           <FontAwesomeIcon icon={faArrowLeft} className="w-5 h-5" />
         </button>
-        <h1 className="text-3xl font-bold">Help & Support</h1>
+        <h1 className="text-3xl font-bold text-white">Help & Support</h1>
       </div>
 
-      <div className="bg-white p-6 rounded-2xl shadow-md mb-8">
-        <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+      <div className="bg-slate-800 p-6 rounded-2xl shadow-md mb-8">
+        <h2 className="text-xl font-semibold text-white mb-4">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index}>
-              <h3 className="text-md font-medium text-blue-700">{faq.question}</h3>
-              <p className="text-gray-600 text-sm mt-1">{faq.answer}</p>
+              <h3 className="text-md font-medium text-cyan-300">{faq.question}</h3>
+              <p className="text-gray-400 text-sm mt-1">{faq.answer}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-white p-6 rounded-2xl shadow-md">
-        <h2 className="text-xl font-semibold mb-4">Need More Help?</h2>
-        <p className="text-gray-600 mb-2">
+      <div className="bg-slate-800 p-6 rounded-2xl shadow-md">
+        <h2 className="text-xl font-semibold text-white mb-4">Need More Help?</h2>
+        <p className="text-gray-400 mb-2">
           If your issue isn't listed above, please contact your system administrator or reach out to our support team.
         </p>
         <a
           href="mailto:support@example.com"
-          className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="inline-block mt-2 px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-400 transition"
         >
           Contact Support
         </a>
